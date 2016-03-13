@@ -42,10 +42,12 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/Show/{id}")
+     * @Route("/show/{id}")
      */
     public function showAction($id)
     {
         $person = $this->getDoctrine()->getRepository('AppBundle:Person')->find($id);
+
+        Return new Response('You found '. $person->getName() .' Who is ' .$person->getDescription());
     }
 }
