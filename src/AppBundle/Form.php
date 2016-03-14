@@ -1,5 +1,7 @@
 <?php
 
+namespace AppBundle\Form;
+
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -20,6 +22,8 @@ class createPerson extends AbstractType
 
   public function configureOptions(OptionsResolver $resolver) 
   {
-    $resolver->setDefaults(array('dataClass' => 'AppBundle\Entity\Post'))
+    $resolver->setDefaults(array(
+      'dataClass' => 'AppBundle\Entity\Post'
+      ))
   }
 }
