@@ -48,6 +48,10 @@ class DefaultController extends Controller
     {
         $person = $this->getDoctrine()->getRepository('AppBundle:Person')->find($id);
 
+        if (!$person) {
+            throw $this->createNotFoundException('There is no person with id ' . $id);
+        }
+
         Return new Response('You found '. $person->getName() .' Who is ' .$person->getDescription());
     }
 }
